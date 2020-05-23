@@ -9,13 +9,24 @@
  *
  *****************************************************************************/
 /**
- * @file <> 
- * @brief <Add Brief Description Here >
+ * @file <Main program file for stats> 
+ * @brief <Program to calculate various statistics for an array>
  *
- * <Add Extended Description Here>
+ * <
+ *The following functions have been defined:
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ *main() - The main entry point for your program
+  print_statistics() - A function that prints the statistics of an array including minimum, maximum, mean, and median.
+  print_array() - Given an array of data and a length, prints the array to the screen
+  find_median() - Given an array of data and a length, returns the median value
+  find_mean() - Given an array of data and a length, returns the mean
+  find_maximum() - Given an array of data and a length, returns the maximum
+  find_minimum() - Given an array of data and a length, returns the minimum
+  sort_array() - Given an array of data and a length, sorts the array from largest to smallest.
+  (The zeroth Element should be the largest value, and the last element (n-1) should be the smallest value. )>
+ *
+ * @author <BS VIJEY ADHITHYA>
+ * @date <23.5.20>
  *
  */
 
@@ -38,7 +49,79 @@ void main() {
   /* Other Variable Declarations Go Here */
 
   /* Statistics and Printing Functions Go Here */
+  print_array(test,SIZE);
+  print_statistics(test,SIZE);
+  print_array(test,SIZE);
 
 }
 
 /* Add other Implementation File Code Here */
+
+float find_maximum(unsigned char *data,int size){
+	float max=data[0];
+	for(int i =0;i<size;i++){
+		if((float)data[i]>max){
+			max=data[i];
+		}
+	}
+	return max;
+}
+
+
+float find_minimum(unsigned char *data,int size){
+	float min=data[0];
+	for(int i =0;i<size;i++){
+		if((float)data[i]<min){
+			min=data[i];
+		}
+	}
+	return min;
+}
+
+float find_mean(unsigned char* data,int size){
+	float total=0.0;
+	for(int i=0;i<size;i++){
+		total+=(float)data[i];
+	}
+	if (size!=0){
+		return total/size;
+	}
+}
+
+void sort_array(unsigned char* data,int size){
+	for(int i =0;i<size;i++){
+		for(int j=i;j<size;j++){
+			if (((int)data[j])>((int)data[i])){
+				char temp=data[i];
+				data[i]=data[j];
+				data[j]=temp;
+			}
+			
+		}
+	}
+}
+
+float find_median(unsigned char* data,int size){
+	sort_array(data,size);
+	if (size%2==0){
+
+		return (float)data[size/2];
+	
+	}else{
+		return ((float)data[size/2]+(float)data[(size/2)+1])/2;
+	}
+}
+
+void print_array(unsigned char* data,int size){
+	for(int i =0;i<size;i++){
+		printf("%d\n",data[i]);
+	}
+}
+
+void print_statistics(unsigned char* data,int size){
+	printf("Mean:%f,Median:%f,min:%f,max:%f",find_mean(data,size),find_median(data,size),find_minimum(data,size),find_maximum(data,size));
+}
+
+
+
+
