@@ -40,19 +40,19 @@
  * @return <Add Return Informaiton here>
  */
 
-float find_mean(float *data,int size);
+float find_mean(unsigned char *data,int size);
 /*@brief <Finds mean of an array of floats>
   
-  This function takes an float array and size of the array 
+  This function takes an unsigned char array and size of the array 
   as input parameters and returns a floating point number.
 
-  @param float array pointer
+  @param unsigned char array pointer
   @param integer size of the array
 
   @return float mean of the array
 */
 
-float find_maximum(float *data,int size);
+float find_maximum(unsigned char *data,int size);
 /*@brief <finds maximum of an array of floats>
   
   This function takes a float array and size of the array
@@ -65,7 +65,7 @@ float find_maximum(float *data,int size);
 
 */
 
-float find_minimum(float *data,int size);
+float find_minimum(unsigned char *data,int size);
 /*@brief <finds minimum of an array of floats>
   
   This function takes a float array and size of the array
@@ -79,7 +79,7 @@ float find_minimum(float *data,int size);
 */
 
 
-float find_median(float *data,int size);
+float find_median(unsigned char *data,int size);
 /*@brief <finds maximum of an array of floats>
   
   This function takes a float array and size of the array
@@ -93,7 +93,7 @@ float find_median(float *data,int size);
 */
 
 
-void print_array(float *data,int size);
+void print_array(unsigned char *data,int size);
 /*@brief <prints given array>
   
   This function takes a float array and size of the array
@@ -106,7 +106,7 @@ void print_array(float *data,int size);
 
 */
 
-void sort_array(float *data,int size);
+void sort_array(unsigned char *data,int size);
 /*@brief <sorts given array>
   
   This function takes a float array and size of the array
@@ -120,13 +120,13 @@ void sort_array(float *data,int size);
 */
 
 
-void print_statistics(float *data,int size);
+void print_statistics(unsigned char *data,int size);
 /*@brief <prints statistics of given array>
   
   A function that prints the statistics of an array including minimum, maximum,
   mean, and median.
 
-  @param float array pointer
+  @param unsigned char array pointer
   @param interger size of the array
 
   @return void
